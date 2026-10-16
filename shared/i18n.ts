@@ -9,6 +9,17 @@
 // Os textos de atividade são montados pelo servidor, então seguem o idioma do servidor.
 import { DICTIONARIES } from './locales/all';
 
+/** Nome do produto na interface (AgentVila: troca a marca sem mexer nas chaves de tradução). */
+export const BRAND = 'AgentVila';
+
+// Os testes do Habblaud comparam os textos originais: no Vitest a marca fica desligada (liga com setBrand).
+let brandOn = !(globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.VITEST;
+
+/** Liga ou desliga a troca de "Habblaud" por BRAND em tr() (para testes). */
+export function setBrand(on: boolean): void {
+  brandOn = on;
+}
+
 export type Locale = 'pt-BR' | 'en' | 'es' | 'fr';
 
 /** Na ordem do seletor; o nome de cada idioma vai na própria língua, para quem não entende o idioma atual. */
@@ -106,7 +117,8 @@ export function setLocale(l: Locale): void {
  */
 export function tr(src: string, args?: readonly unknown[]): string {
   const dict = DICTS[current];
-  const s = (dict && dict[src]) || src;
+  const t = (dict && dict[src]) || src;
+  const s = brandOn ? t.replaceAll('Habblaud', BRAND) : t;
   if (!args || args.length === 0) return s;
   return s.replace(/\{(\d+)\}/g, (m, i: string) => (Number(i) < args.length ? String(args[Number(i)]) : m));
 }

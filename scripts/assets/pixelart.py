@@ -259,7 +259,7 @@ def text_image(text: str, color: str, scale: int = 1, shadow: str | None = None)
 
 
 def signage() -> Image.Image:
-    """Placa da recepção, 64x16: chapa azul-marinho com bisel, parafusos e "Habblaud"."""
+    """Placa da recepção, 64x16: chapa azul-marinho com bisel, parafusos e "AgentVila"."""
     w, h = 64, 16
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     px = img.load()
@@ -279,13 +279,13 @@ def signage() -> Image.Image:
     for sx in (3, w - 4):  # parafusos
         px[sx, 7] = hex_rgba("#c9d3e3")
         px[sx, 8] = hex_rgba("#7d8aa3")
-    # texto centralizado com sombra de 1px; "Hab" claro e "blaud" na cor das janelas acesas
-    tx, ty = (w - text_width("Habblaud")) // 2, 4
-    blaud_x = tx + text_width("Hab") + 1
-    draw_text(img, tx, ty + 1, "Hab", "#151c33")
-    draw_text(img, blaud_x, ty + 1, "blaud", "#151c33")
-    draw_text(img, tx, ty, "Hab", "#f4f1ea")
-    draw_text(img, blaud_x, ty, "blaud", "#fac665")
+    # texto centralizado com sombra de 1px; "Agent" claro e "Vila" na cor das janelas acesas
+    tx, ty = (w - text_width("AgentVila")) // 2, 4
+    vila_x = tx + text_width("Agent") + 1
+    draw_text(img, tx, ty + 1, "Agent", "#151c33")
+    draw_text(img, vila_x, ty + 1, "Vila", "#151c33")
+    draw_text(img, tx, ty, "Agent", "#f4f1ea")
+    draw_text(img, vila_x, ty, "Vila", "#fac665")
     return img
 
 

@@ -5,7 +5,7 @@ import { h, setAttr, setHidden, setStyleVar, setText, setTitle, setVariant } fro
 import { WORDMARK } from './icons';
 import { shellDoneKind, shellLine, shellStage, statusLabel, type ShellWait } from './model';
 import { accountChipLabel, accountProvider, fallbackShort, showsProviderTag } from './provider';
-import { tr } from '../../../shared/i18n';
+import { BRAND, tr } from '../../../shared/i18n';
 
 /**
  * Chip quadrado com a letra curta da conta ("C", "D") na cor da conta. Conta do Codex: o chip fica vazado (fundo
@@ -133,6 +133,6 @@ export function updateShellActivityLine(el: HTMLElement, wait: ShellWait, now: n
 export function wordmark(cls = 'ui-brand__name'): HTMLElement {
   const el = h('span', { class: cls });
   el.innerHTML = WORDMARK;
-  el.append(h('span', { class: 'ui-sr', text: 'Habblaud' }));
+  el.append(h('span', { class: 'ui-sr', text: BRAND }));
   return el;
 }

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest';
-import { getLocale, intlLocale, normalizeLocale, serverLocale, setLocale, tr } from './i18n';
+import { getLocale, intlLocale, normalizeLocale, serverLocale, setBrand, setLocale, tr } from './i18n';
 import { EN } from './locales/en';
 import { ES } from './locales/es';
 import { FR } from './locales/fr';
@@ -71,5 +71,17 @@ describe('i18n', () => {
         if (lang !== 'fr') for (const p of original) expect(placeholders(t).has(p), `${lang}: ${pt} -> ${t}`).toBe(true);
       }
     }
+  });
+});
+
+describe('marca AgentVila', () => {
+  afterEach(() => setBrand(false));
+
+  it('troca Habblaud por AgentVila nos textos, em PT e nas traduções', () => {
+    setBrand(true);
+    expect(tr('Sem conexão com o Habblaud.')).toBe('Sem conexão com o AgentVila.');
+    setLocale('en');
+    expect(tr('Sem conexão com o Habblaud.')).toBe('No connection to AgentVila.');
+    setLocale('pt-BR');
   });
 });

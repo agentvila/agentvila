@@ -330,19 +330,21 @@ export const FALLBACK_MARK = pixelIcon(
 );
 
 /**
- * Logotipo "Habblaud" em pixels, com a mesma fonte bitmap da placa da marca (assets/brand/signage.png, gerada por
+ * Logotipo "AgentVila" em pixels, com a mesma fonte bitmap da placa da marca (assets/brand/signage.png, gerada por
  * scripts/assets/pixelart.py): a Pixelify Sans não fica nítida nesse tamanho.
- * c = "Hab" (creme), t = "blaud" (âmbar), s = sombra de 1 px.
+ * c = "Agent" (creme), t = "Vila" (âmbar), s = sombra de 1 px.
  */
 export const WORDMARK_ROWS = [
-  'c...c.......c.....t.....tt..................t',
-  'c...c.......c.....t.....st..................t',
-  'c...c..ccc..cccc..tttt...t...ttt..t...t..tttt',
-  'ccccc..sssc.csssc.tssst..t...ssst.t...t.tssst',
-  'csssc..cccc.c...c.t...t..t...tttt.t...t.t...t',
-  'c...c.csssc.c...c.t...t..t..tssst.t...t.t...t',
-  'c...c.scccc.ccccs.tttts.ttt.stttt.stttt.stttt',
-  's...s..ssss.ssss..ssss..sss..ssss..ssss..ssss',
+  '.ccc.........................t...t..t..tt.......',
+  'csssc....................c...t...t..s..st.......',
+  'c...c..cccc..ccc..cccc..cccc.t...t.tt...t...ttt.',
+  'ccccc.csssc.csssc.csssc.scss.t...t.st...t...ssst',
+  'csssc.c...c.ccccc.c...c..c...st.ts..t...t...tttt',
+  'c...c.c...c.cssss.c...c..c....t.t...t...t..tssst',
+  'c...c.scccc.sccc..c...c..scc..sts..ttt.ttt.stttt',
+  's...s..sssc..sss..s...s...ss...s...sss.sss..ssss',
+  '.......cccs.....................................',
+  '.......sss......................................',
 ] as const;
 
 export const WORDMARK = pixelIcon(WORDMARK_ROWS, { s: 'rgba(6, 8, 14, 0.62)', c: '#f4f1ea', t: '#fac665' }, 'ui-wordmark');
