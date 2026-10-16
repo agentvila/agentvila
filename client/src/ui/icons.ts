@@ -307,25 +307,24 @@ export const ICONS = {
 
 export type IconKey = keyof typeof ICONS;
 
-/** Marca do Habblaud em pixels (usada quando /assets/brand/logo-mark.png não existe): prédio com janelas acesas. */
+/** Marca da AgentVila em pixels (usada quando /assets/brand/logo-mark.png não existe): prédios com janelas acesas. */
 export const FALLBACK_MARK = pixelIcon(
   [
-    '.....######.....',
-    '.....#rrrr#.....',
-    '..############..',
-    '..#llllllllll#..',
-    '..#lwwlwwlbbl#..',
-    '..#lwwlwwlbbl#..',
-    '..#llllllllll#..',
-    '..#lbblwwlwwl#..',
-    '..#lbblwwlwwl#..',
-    '..#llllllllll#..',
-    '..#lwwlddlbbl#..',
-    '..#lwwlddlbbl#..',
-    '..#llllddllll#..',
+    '......o.........',
+    '......#.........',
+    '....#####.......',
+    '....#lll#.......',
+    '....#wbw#####...',
+    '.####bwb#bbb#...',
+    '.#bb#wbw#bwb#...',
+    '.#wb#bbw#bbb#...',
+    '.#bb#wbb#wbb#...',
+    '.#bw#bwb#bbw#...',
+    '.#bb#bdd#bbb#...',
+    '.#bb#bdd#bbb#...',
     '################',
   ],
-  { '#': '#2b3550', l: '#dfe6f2', r: '#ff8a5b', w: '#ffd36b', b: '#7cc8ff', d: '#3a4566' },
+  { '#': '#16181f', l: '#c9d3e3', w: '#fac665', b: '#7cc0f0', d: '#f08a3c', o: '#f08a3c' },
   'ui-px-icon ui-mark',
 );
 
